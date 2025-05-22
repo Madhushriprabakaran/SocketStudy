@@ -52,6 +52,41 @@ Socket programming finds applications in various domains, including web developm
 3.	File Transfer Protocol: Protocols like FTP (File Transfer Protocol) utilize socket programming for transferring files between a client and a server.
 4.	Networked Games: Online multiplayer games rely on socket programming to facilitate communication between game clients and servers.
 5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
+## Client
+CLIENT 
+import socket
+# Create a socket object
+client socket = socket. socket(socket.AF INET, socket . SOCK_STREAM)
+# Connect to the server
+client_socket. connect(( ' localhost ' , 8000) )
+# Print the client 's socket name 
+print(f"C1ient connected from: {client_socket.getsockname()}")
+# Receive a message from the server
+server message = client_socket. recv(1024) . decode() print(f"Received from server: {server_message}")
+# Send a message to the server
+client_socket.send("Acknow1edgement received from the client. " . encode())
+
+# Close the connection 
+client_ socket. close()
+## SERVER :
+import socket
+# Create a socket object
+server socket = socket. socket(socket.AF INET, socket . SOCK_STREAM)
+# Bind the socket to the host and port
+server_ socket. ' localhost' , 8000))
+# Listen for incoming connections (max 1 connection) 
+server_ socket . listen (1) print("Server is waiting for a connection. . .
+# Accept the connection 
+conn, addr - server_ socket. accept() print (f "Connected by {addr}" )
+# Send a message to the client 
+conn.send("He110 from the server! " . encode())
+# Receive a message from the client 
+data - conn.recv(1024) print(f"Received from client: {data. decode()}")
+# Close the connection 
+conn.close() server_ socket . close ( )
+## Output
+![cn 1a](https://github.com/user-attachments/assets/4b40c098-62ea-4cfe-b9b6-7c891a5cb1f5)
+
 
 
 ## Result:
